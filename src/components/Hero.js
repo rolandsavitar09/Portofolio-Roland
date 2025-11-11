@@ -5,6 +5,7 @@ import github from "../assets/images/github.png";
 import email from "../assets/images/email.png";
 import wa from "../assets/images/wa.png";
 import foto from "../assets/images/Foto Diri.png";
+import cv from "../assets/files/CV-Roland.pdf"; 
 
 function Hero() {
   const socials = [
@@ -82,9 +83,11 @@ function Hero() {
           >
             Hire Me
           </a>
+
+          {/* ✅ DOWNLOAD CV BUTTON */}
           <a
-            href="/cv.pdf"
-            download
+            href={cv}
+            download="CV-Roland-Savitar-Herdiansyah.pdf"
             className="px-6 py-2 text-[18px] font-bold rounded-[20px] border border-[#00E0FF] text-white hover:bg-[#00E0FF]/10 transition"
           >
             Download CV
