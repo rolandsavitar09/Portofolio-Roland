@@ -96,7 +96,7 @@ function Skills() {
       id="skills"
       className="min-h-screen flex flex-col items-center py-20 text-center px-6 md:px-20"
       style={{
-        background: "linear-gradient(180deg, #0A0F1C 35%, #0F2027 100%)",
+        background: "linear-gradient(180deg, #0F2027 35%, #0A0F1C 100%)",
       }}
     >
       <motion.h2

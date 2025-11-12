@@ -26,7 +26,7 @@ function Hero() {
                  px-8 md:px-20 pt-32 pb-20 md:pb-24 overflow-visible"
       style={{
         background:
-          "radial-gradient(circle at center, #0A0F1C 35%, #0F2027 100%)",
+          "linear-gradient(180deg, #0A0F1C 35%, #0F2027 100%)",
       }}
     >
       {/* LEFT SIDE */}

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 function Navbar() {
   const [active, setActive] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const menu = ["Home", "About", "Skills", "Projects", "Contact"];
+  const menu = ["Home", "About", "Projects", "Skills", "Contact"];
 
   // Scroll ke section dengan id (smooth)
   const scrollTo = (id) => {
