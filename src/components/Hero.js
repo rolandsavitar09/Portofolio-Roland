@@ -5,7 +5,7 @@ import github from "../assets/images/github.png";
 import email from "../assets/images/email.png";
 import wa from "../assets/images/wa.png";
 import foto from "../assets/images/Foto Diri.png";
-import cv from "../assets/files/CV-Roland.pdf"; 
+import cv from "../assets/files/CV-Roland.pdf";
 
 function Hero() {
   const socials = [
@@ -21,9 +21,12 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-8 md:px-20 pt-32"
+      // 🔧 Diperbaiki agar tidak "mengunci scroll" di iPhone Safari
+      className="w-full flex flex-col md:flex-row justify-center items-center text-center md:text-left
+                 px-8 md:px-20 pt-32 pb-20 md:pb-24 overflow-visible"
       style={{
-        background: "radial-gradient(circle at center, #0A0F1C 35%, #0F2027 100%)",
+        background:
+          "radial-gradient(circle at center, #0A0F1C 35%, #0F2027 100%)",
       }}
     >
       {/* LEFT SIDE */}
@@ -42,7 +45,8 @@ function Hero() {
           Roland Savitar Herdiansyah
         </h1>
 
-        <h2 className="text-[48px] font-extrabold font-['Poppins'] text-transparent bg-clip-text bg-gradient-to-r from-[#00E0FF] to-[#318590] leading-snug">
+        <h2 className="text-[48px] font-extrabold font-['Poppins'] text-transparent bg-clip-text 
+                       bg-gradient-to-r from-[#00E0FF] to-[#318590] leading-snug">
           WEB DEVELOPMENT &<br />UI/UX DESIGNER
         </h2>
 
@@ -74,7 +78,7 @@ function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex gap-4 mt-8 justify-center md:justify-start"
+          className="flex gap-4 mt-8 justify-center md:justify-start flex-wrap"
         >
           <a
             href="#contact"
@@ -88,7 +92,8 @@ function Hero() {
           <a
             href={cv}
             download="CV-Roland-Savitar-Herdiansyah.pdf"
-            className="px-6 py-2 text-[18px] font-bold rounded-[20px] border border-[#00E0FF] text-white hover:bg-[#00E0FF]/10 transition"
+            className="px-6 py-2 text-[18px] font-bold rounded-[20px] border border-[#00E0FF]
+                       text-white hover:bg-[#00E0FF]/10 transition"
           >
             Download CV
           </a>
@@ -101,17 +106,20 @@ function Hero() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="md:w-1/2 flex justify-center mt-16 md:mt-0 relative"
+        className="md:w-1/2 flex justify-center mt-16 md:mt-0 relative select-none pointer-events-none"
       >
         {/* Lingkaran latar belakang */}
-        <div className="absolute w-[340px] h-[340px] md:w-[400px] md:h-[400px] bg-[#0F2027] rounded-full shadow-[0_0_100px_#00E0FF]/40"></div>
+        <div className="absolute w-[340px] h-[340px] md:w-[400px] md:h-[400px] bg-[#0F2027] rounded-full shadow-[0_0_100px_#00E0FF]/40" />
 
         {/* Frame lingkaran foto */}
-        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border-4 border-[#00E0FF]/60 overflow-hidden flex justify-center items-end shadow-[0_0_40px_#00E0FF]/20">
+        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border-4 
+                        border-[#00E0FF]/60 overflow-hidden flex justify-center items-end 
+                        shadow-[0_0_40px_#00E0FF]/20">
           <img
             src={foto}
             alt="Roland Savitar"
-            className="relative w-[380px] md:w-[480px] object-cover translate-y-10 md:translate-y-16 scale-110"
+            className="relative w-[380px] md:w-[480px] object-cover translate-y-10 md:translate-y-16 scale-110 
+                       select-none pointer-events-none"
           />
         </div>
       </motion.div>
