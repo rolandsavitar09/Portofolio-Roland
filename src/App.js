@@ -9,13 +9,26 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="text-white">
+    <div
+      className="text-white overflow-x-hidden scroll-smooth bg-[#0A0F1C]"
+      style={{
+        maxWidth: "100vw",
+        position: "relative",
+      }}
+    >
+      {/* NAVBAR */}
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+
+      {/* MAIN SECTIONS */}
+      <main className="overflow-x-hidden">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
+      {/* FOOTER */}
       <Footer />
     </div>
   );

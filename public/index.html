@@ -1,44 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- ✅ Basic Meta -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0A0F1C" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Roland Savitar Herdiansyah | Front End Developer & UI/UX Designer Portfolio Website"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="Roland Savitar, Front End Developer, UI/UX Designer, Web Developer, Portfolio, React, Tailwind"
+    />
+    <meta name="author" content="Roland Savitar Herdiansyah" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- ✅ Title & Favicon -->
+    <title>Roland Savitar — Portfolio</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- ✅ Font (Poppins) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Social Preview -->
+    <meta property="og:title" content="Roland Savitar Herdiansyah — Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore my works in Web Development and UI/UX Design. Crafted with React and TailwindCSS."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/preview.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Mobile-Safe CSS -->
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        background-color: #0a0f1c;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Notch padding support (iPhone & Android) */
+      body {
+        padding-right: env(safe-area-inset-right);
+        padding-left: env(safe-area-inset-left);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      /* Hilangkan tap highlight di Android */
+      * {
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #00e0ff, #0b5d68);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    </style>
   </head>
-  <body>
+
+  <body class="overflow-x-hidden bg-[#0A0F1C]">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
+
+    <!-- 
       This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+      React will inject the components here during build.
     -->
   </body>
 </html>
