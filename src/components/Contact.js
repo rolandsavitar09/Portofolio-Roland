@@ -18,7 +18,7 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_oj64ion", // Ganti dengan Service ID kamu
+        "service_z42y01b", // Ganti dengan Service ID kamu
         "template_dnmqoma", // Ganti dengan Template ID kamu
         form.current,
         "aCfu9iWs88JwS0PLM" // Ganti dengan Public Key kamu
