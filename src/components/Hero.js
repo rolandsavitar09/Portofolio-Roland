@@ -51,7 +51,7 @@ function Hero() {
   const socials = [
     {
       icon: linkedin,
-      link: "www.linkedin.com/in/roland-savitar-herdiansyah",
+      link: "https://www.linkedin.com/in/roland-savitar-herdiansyah",
     },
     { icon: github, link: "https://github.com/rolandsavitar09" },
     { icon: email, link: "mailto:rolandsavitarherdiansyah@gmail.com" },
