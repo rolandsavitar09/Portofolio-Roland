@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Import semua thumbnail (perhatikan huruf besar kecil)
 import panenmania from "../assets/images/Panen Mania.png";
 import personal from "../assets/images/Personal Profile.png";
 import tenshoespot from "../assets/images/Ten Shoe Spot.png";
@@ -9,6 +8,11 @@ import samadhi from "../assets/images/Samadhi Buddhi.png";
 import vokapedia from "../assets/images/Voka pedia.png";
 import bookfinity from "../assets/images/Bookfinity.png";
 import justicehub from "../assets/images/Justice Hub.png";
+
+import reacticon from "../assets/images/Logo Javascript.png";
+import tailwindicon from "../assets/images/Logo Tailwind.png";
+import figmaicon from "../assets/images/Logo figma.png";
+import htmlicon from "../assets/images/Logo HTML.png";
 
 function Projects() {
   const categories = ["ALL", "WEBSITE", "UI/UX DESIGN"];
@@ -20,52 +24,76 @@ function Projects() {
       category: "Website",
       image: panenmania,
       link: "https://panenmania.vercel.app/",
+      source: "https://github.com/rolandsavitar09",
+      desc: "Website marketplace untuk UMKM hasil panen.",
+      stack: [reacticon, tailwindicon],
     },
     {
       title: "Ten Shoe Spot",
       category: "Website",
       image: tenshoespot,
       link: "https://tenshoespot.infinityfreeapp.com/",
+      source: "",
+      desc: "Website katalog sepatu modern dan responsive.",
+      stack: [htmlicon, tailwindicon],
     },
     {
       title: "Personal Profile",
       category: "Website",
       image: personal,
       link: "https://personal-profile-jeus.vercel.app/",
+      source: "",
+      desc: "Website profile personal dengan animasi halus.",
+      stack: [reacticon],
     },
     {
       title: "Samadhi Buddhi",
       category: "UI/UX Design",
       image: samadhi,
-      link: "https://www.figma.com/design/M5EVPs3fXWDLOFu7fuPndR/Samadhi-Buddhi?node-id=0-1&t=9Zn1JWOnUF2ALlis-1",
+      link: "https://www.figma.com/design/M5EVPs3fXWDLOFu7fuPndR/Samadhi-Buddhi",
+      source: "",
+      desc: "Desain untuk aplikasi perpustakaan online.",
+      stack: [figmaicon],
     },
     {
       title: "Vokapedia",
       category: "UI/UX Design",
       image: vokapedia,
-      link: "https://www.figma.com/design/H0PTXj4ohgrerfwYkwB5gE/Vokapedia?t=9Zn1JWOnUF2ALlis-1",
+      link: "https://www.figma.com/design/H0PTXj4ohgrerfwYkwB5gE/Vokapedia",
+      source: "",
+      desc: "Desain untuk aplikasi edukasi online.",
+      stack: [figmaicon],
     },
     {
       title: "Ten Shoe Spot",
       category: "UI/UX Design",
       image: tenshoespot,
-      link: "https://www.figma.com/design/88jSlADA9zKtxN2zowZa65/TEN-SHOE-SPOT?t=9Zn1JWOnUF2ALlis-1",
+      link: "https://www.figma.com/design/88jSlADA9zKtxN2zowZa65/TEN-SHOE-SPOT",
+      source: "",
+      desc: "Desain UI modern untuk toko sepatu online.",
+      stack: [figmaicon],
     },
     {
       title: "BookFinity",
       category: "UI/UX Design",
       image: bookfinity,
-      link: "https://www.figma.com/design/QQOuaeqVVuOhYDk5e0eg4Z/BookFinity?t=9Zn1JWOnUF2ALlis-1",
+      link: "https://www.figma.com/design/QQOuaeqVVuOhYDk5e0eg4Z/BookFinity",
+      source: "",
+      desc: "UI e-book library modern dan clean.",
+      stack: [figmaicon],
     },
     {
       title: "Justice Hub",
       category: "UI/UX Design",
       image: justicehub,
-      link: "https://www.figma.com/design/m1Zb6imp7dPM85bHTqo96X/Justice-Hub?t=9Zn1JWOnUF2ALlis-1",
+      link: "https://www.figma.com/design/m1Zb6imp7dPM85bHTqo96X/Justice-Hub",
+      source: "",
+      desc: "Desain UI untuk sistem bantuan hukum.",
+      stack: [figmaicon],
     },
   ];
 
-  const filteredProjects =
+  const filtered =
     activeCategory === "ALL"
       ? projects
       : projects.filter((p) => p.category.toUpperCase() === activeCategory);
@@ -78,18 +106,17 @@ function Projects() {
         background: "linear-gradient(180deg, #0A0F1C 35%, #0F2027 100%)",
       }}
     >
-      {/* TITLE */}
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E0FF] to-[#318590] text-[38px] md:text-[44px] font-extrabold font-poppins mb-10"
+        className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E0FF] to-[#318590] 
+                   text-[38px] md:text-[44px] font-extrabold font-poppins mb-10"
       >
-        PROJECT
+        PROJECTS
       </motion.h2>
 
-      {/* FILTER BUTTONS */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -106,7 +133,6 @@ function Projects() {
         ))}
       </div>
 
-      {/* PROJECT GRID */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeCategory}
@@ -114,33 +140,78 @@ function Projects() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-10 w-full max-w-6xl"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl"
         >
-          {filteredProjects.map((proj, index) => (
-            <motion.a
+          {filtered.map((proj, index) => (
+            <motion.div
               key={index}
-              href={proj.link}
-              target="_blank"
-              rel="noreferrer"
-              whileHover={{ scale: 1.03 }}
-              className="relative rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,224,255,0.2)] bg-[#0F2027]/50 border border-[#00E0FF]/20 hover:shadow-[0_0_30px_rgba(0,224,255,0.4)] transition-all duration-500"
+              whileHover={{ scale: 1.05, translateY: -10 }}
+              className="rounded-2xl overflow-hidden backdrop-blur-md 
+                         bg-white/10 border border-white/20 
+                         shadow-[0_0_25px_rgba(0,224,255,0.2)] hover:shadow-[0_0_35px_rgba(0,224,255,0.4)]
+                         transition-all duration-500"
             >
-              <img
-                src={proj.image}
-                alt={proj.title}
-                className="w-full h-[240px] object-cover"
-              />
+              <div className="relative">
+                <a href={proj.link} target="_blank" rel="noreferrer">
+                  <img
+                    src={proj.image}
+                    alt={proj.title}
+                    className="w-full h-[220px] object-cover"
+                  />
+                </a>
 
-              {/* Overlay info */}
-              <div className="absolute bottom-0 w-full bg-[#0B5D68] py-4 px-6 flex justify-between items-center">
-                <h3 className="text-white text-[20px] font-bold font-poppins">
+                <span
+                  className={`absolute top-3 left-3 px-3 py-1 text-[13px] font-semibold rounded-full 
+                    backdrop-blur-xl shadow-md 
+                    ${
+                      proj.category === "Website"
+                        ? "bg-[#00E0FF]/20 text-[#00E0FF] border border-[#00E0FF]/40"
+                        : "bg-[#A855F7]/20 text-[#A855F7] border border-[#A855F7]/40"
+                    }`}
+                >
+                  {proj.category.toUpperCase()}
+                </span>
+              </div>
+
+              <div className="p-5 text-left space-y-3">
+                <h3 className="text-[20px] font-bold text-white">
                   {proj.title}
                 </h3>
-                <p className="text-white/80 font-semibold text-[16px]">
-                  {proj.category}
-                </p>
+
+                <p className="text-gray-300 text-[15px]">{proj.desc}</p>
+
+                <div className="flex gap-3 mt-2">
+                  {proj.stack.map((icon, i) => (
+                    <img key={i} src={icon} alt="stack" className="w-6 h-6" />
+                  ))}
+                </div>
+
+                <div className="flex gap-4 mt-4">
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 text-center py-2 rounded-lg 
+                               bg-gradient-to-r from-[#00E0FF] to-[#0B5D68] text-white font-semibold 
+                               hover:opacity-90 transition"
+                  >
+                    Live Demo
+                  </a>
+
+                  {proj.source && (
+                    <a
+                      href={proj.source}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 text-center py-2 rounded-lg border border-[#00E0FF] text-white 
+                                 hover:bg-white/10 transition font-semibold"
+                    >
+                      Source
+                    </a>
+                  )}
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </motion.div>
       </AnimatePresence>
