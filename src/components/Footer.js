@@ -17,7 +17,7 @@ function Footer() {
         background: "linear-gradient(180deg, #0F2027 35%, #0A0F1C 100%)",
       }}
     >
-      {/* FOOTER TEXT */}
+      
       <motion.h2
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ function Footer() {
         Web Development & UI/UX Designer
       </motion.p>
 
-      {/* NAV LINKS */}
+     
       <motion.ul
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -59,7 +59,7 @@ function Footer() {
         ))}
       </motion.ul>
 
-      {/* COPYRIGHT */}
+     
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -70,7 +70,7 @@ function Footer() {
         © {new Date().getFullYear()} Roland Savitar Herdiansyah — All rights reserved.
       </motion.div>
 
-      {/* GLOW LINE */}
+    
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}

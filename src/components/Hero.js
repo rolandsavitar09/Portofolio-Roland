@@ -8,14 +8,13 @@ import foto from "../assets/images/Foto Diri.png";
 import cv from "../assets/files/CV-Roland.pdf";
 
 function Hero() {
-  // --- 3D Motion Values ---
+  
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
 
-  // Untuk batas gerakan
-  const constrain = 25; // derajat max tilt
+  
+  const constrain = 25; 
 
-  // --- Desktop: Gerak mengikuti mouse ---
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - (rect.left + rect.width / 2);
@@ -30,14 +29,13 @@ function Hero() {
     rotateY.set(0);
   };
 
-  // --- Mobile: Gerak mengikuti tilt gyroscope ---
   useEffect(() => {
     const handleOrientation = (e) => {
-      if (!e.gamma || !e.beta) return; // sensor tidak tersedia
+      if (!e.gamma || !e.beta) return; 
 
-      // gamma = kiri/kanan, beta = depan/belakang
-      const xTilt = e.beta; // depan-belakang
-      const yTilt = e.gamma; // kiri-kanan
+      
+      const xTilt = e.beta; 
+      const yTilt = e.gamma; 
 
       rotateX.set(xTilt / 4); 
       rotateY.set(yTilt / 4);
@@ -69,7 +67,7 @@ function Hero() {
         background: "linear-gradient(180deg, #0A0F1C 35%, #0F2027 100%)",
       }}
     >
-      {/* LEFT SIDE */}
+      
       <div className="md:w-1/2 flex flex-col justify-center space-y-4">
         <p className="text-[#BCBCBC] text-[36px] font-semibold font-['Poppins']">
           Hi, I am
@@ -84,7 +82,7 @@ function Hero() {
           WEB DEVELOPMENT &<br />UI/UX DESIGN
         </h2>
 
-        {/* SOCIAL ICONS */}
+
         <div className="flex gap-6 mt-6 justify-center md:justify-start">
           {socials.map((s, i) => (
             <motion.a
@@ -100,7 +98,7 @@ function Hero() {
           ))}
         </div>
 
-        {/* BUTTONS */}
+
         <div className="flex gap-4 mt-8 justify-center md:justify-start flex-wrap">
           <a
             href="#contact"
@@ -121,11 +119,11 @@ function Hero() {
         </div>
       </div>
 
-      {/* RIGHT SIDE — FOTO 3D */}
+ 
       <motion.div
         className="md:w-1/2 flex justify-center mt-16 md:mt-0 relative select-none"
         style={{
-          perspective: 1200, // penting untuk efek 3D
+          perspective: 1200, 
         }}
       >
         <motion.div
@@ -138,10 +136,10 @@ function Hero() {
           transition={{ type: "spring", stiffness: 150, damping: 20 }}
           className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full "
         >
-          {/* Lingkaran Glow */}
+       
           <div className="absolute inset-0 rounded-full bg-[#0F2027] shadow-[0_0_100px_#00E0FF]/40" />
 
-          {/* Frame Foto */}
+       
           <div
             className="relative w-full h-full rounded-full border-4 
                        border-[#00E0FF]/60 overflow-hidden flex justify-center items-end 

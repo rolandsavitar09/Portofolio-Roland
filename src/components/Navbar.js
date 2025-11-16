@@ -5,17 +5,17 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const menu = ["Home", "About", "Projects", "Skills", "Contact"];
 
-  // Scroll ke section dengan id (smooth)
+  
   const scrollTo = (id) => {
     const el = document.getElementById(id.toLowerCase());
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       setActive(id);
-      setMobileOpen(false); // tutup mobile menu kalau dibuka
+      setMobileOpen(false); 
     }
   };
 
-  // Update active berdasarkan posisi scroll
+  
   useEffect(() => {
     const sections = menu.map((m) => document.getElementById(m.toLowerCase()));
 
@@ -23,13 +23,13 @@ function Navbar() {
       const scrollPos = window.scrollY;
       let current = active;
 
-      // Cari section yang paling dekat dari top (threshold 150px)
+    
       for (let i = 0; i < sections.length; i++) {
         const sec = sections[i];
         if (!sec) continue;
         const rect = sec.getBoundingClientRect();
         const top = rect.top + window.scrollY;
-        // jika bagian atas section sudah melewati 40% viewport dari atas, anggap aktif
+       
         if (scrollPos >= top - window.innerHeight * 0.45) {
           current = menu[i];
         }
@@ -38,15 +38,15 @@ function Navbar() {
       if (current !== active) setActive(current);
     };
 
-    // attach
+   
     window.addEventListener("scroll", onScroll, { passive: true });
-    // initial check
+    
     onScroll();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   return (
@@ -57,7 +57,7 @@ function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-10 font-['Poppins']">
-        {/* LOGO */}
+      
         <button
           onClick={() => scrollTo("Home")}
           className="text-white text-2xl md:text-3xl font-extrabold tracking-wide"
@@ -65,7 +65,7 @@ function Navbar() {
           PORTOFOLIO
         </button>
 
-        {/* DESKTOP MENU */}
+       
         <ul className="hidden md:flex space-x-10 text-lg font-extrabold text-white items-center">
           {menu.map((item) => (
             <li key={item}>
@@ -84,7 +84,7 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* HIRE ME BUTTON (desktop) */}
+      
         <a
           href="#contact"
           onClick={(e) => {
@@ -97,7 +97,7 @@ function Navbar() {
           Hire Me
         </a>
 
-        {/* MOBILE TOGGLE */}
+       
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={() => {
@@ -111,7 +111,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+
       <div
         className={`md:hidden w-full bg-black/10 backdrop-blur-md transition-max-height duration-300 overflow-hidden ${
           mobileOpen ? "max-h-screen" : "max-h-0"

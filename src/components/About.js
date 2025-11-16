@@ -12,7 +12,7 @@ function About() {
         background: "linear-gradient(180deg, #0F2027 35%, #0A0F1C 100%)",
       }}
     >
-      {/* ABOUT ME */}
+   
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,6 @@ function About() {
         kreativitas dalam dunia teknologi informasi.
       </motion.p>
 
-      {/* EDUCATION SECTION */}
       <motion.h3
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +53,7 @@ function About() {
       </motion.h3>
 
       <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32">
-        {/* UNESA */}
+        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +76,7 @@ function About() {
           </div>
         </motion.div>
 
-        {/* SMAN 1 TALUN */}
+        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

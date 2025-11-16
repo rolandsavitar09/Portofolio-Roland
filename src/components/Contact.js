@@ -18,10 +18,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_z42y01b", // Ganti dengan Service ID kamu
-        "template_dnmqoma", // Ganti dengan Template ID kamu
+        "service_z42y01b", // Service ID
+        "template_dnmqoma", // Template ID 
         form.current,
-        "aCfu9iWs88JwS0PLM" // Ganti dengan Public Key kamu
+        "aCfu9iWs88JwS0PLM" // Public Key 
       )
       .then(
         () => {
@@ -40,7 +40,7 @@ function Contact() {
   const socials = [
     {
       icon: linkedin,
-      link: "https://www.linkedin.com/in/roland-savitar-709b55275",
+      link: "www.linkedin.com/in/roland-savitar-herdiansyah",
     },
     { icon: github, link: "https://github.com/rolandsavitar09" },
     { icon: email, link: "mailto:rolandsavitarherdiansyah@gmail.com" },
@@ -55,7 +55,7 @@ function Contact() {
         background: "linear-gradient(180deg, #0A0F1C 35%, #0F2027 100%)",
       }}
     >
-      {/* TITLE */}
+
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ function Contact() {
         Let’s collaborate or just say hi 👋
       </motion.p>
 
-      {/* CONTACT FORM */}
+ 
       <motion.form
         ref={form}
         onSubmit={sendEmail}
@@ -122,7 +122,7 @@ function Contact() {
         </button>
       </motion.form>
 
-      {/* STATUS MESSAGE */}
+   
       {success === true && (
         <motion.p
           initial={{ opacity: 0 }}
@@ -142,7 +142,6 @@ function Contact() {
         </motion.p>
       )}
 
-      {/* SOCIAL ICONS */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
